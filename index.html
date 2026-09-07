@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Virtual Tour - antalyamoydom</title>
+    
+    <!-- Pannellum CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #panorama {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+
+<script>
+pannellum.viewer('panorama', {
+    "default": {
+        "firstScene": "view", /* 1) Tur Manzara (View) ile başlar */
+        "author": "antalyamoydom",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+        "hotSpotDebug": true /* Kapı açılarını ayarlamak için debug modu açık */
+    },
+
+    "scenes": {
+        /* 1) MANZARA (VIEW) */
+        "view": {
+            "title": "View",
+            "type": "equirectangular",
+            "panorama": "view.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Go to Living Room",
+                    "sceneId": "livingRoom"
+                }
+            ]
+        },
+
+        /* 2) SALON (LIVING ROOM) */
+        "livingRoom": {
+            "title": "Living Room",
+            "type": "equirectangular",
+            "panorama": "living-room.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -90,
+                    "type": "scene",
+                    "text": "Back to View",
+                    "sceneId": "view"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Go to Kitchen",
+                    "sceneId": "kitchen"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 135,
+                    "type": "scene",
+                    "text": "Go to Bedroom",
+                    "sceneId": "bedroom"
+                }
+            ]
+        },
+
+        /* 3) MUTFAK (KITCHEN) */
+        "kitchen": {
+            "title": "Kitchen",
+            "type": "equirectangular",
+            "panorama": "kitchen.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -135,
+                    "type": "scene",
+                    "text": "Back to Living Room",
+                    "sceneId": "livingRoom"
+                }
+            ]
+        },
+
+        /* 4) YATAK ODASI (BEDROOM) */
+        "bedroom": {
+            "title": "Bedroom",
+            "type": "equirectangular",
+            "panorama": "bedroom.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -45,
+                    "type": "scene",
+                    "text": "Back to Living Room",
+                    "sceneId": "livingRoom"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 90,
+                    "type": "scene",
+                    "text": "Go to General View",
+                    "sceneId": "general"
+                }
+            ]
+        },
+
+        /* 5) GENEL (GENERAL VIEW) */
+        "general": {
+            "title": "General View",
+            "type": "equirectangular",
+            "panorama": "general.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -90,
+                    "type": "scene",
+                    "text": "Back to Bedroom",
+                    "sceneId": "bedroom"
+                }
+            ]
+        }
+    }
+});
+</script>
+
+</body>
+</html>
