@@ -30,15 +30,15 @@
 <script>
 pannellum.viewer('panorama', {
     "default": {
-        "firstScene": "view", /* 1) Tur Manzara (View) ile başlar */
+        "firstScene": "view", /* 1) View (First scene) */
         "author": "antalyamoydom",
         "sceneFadeDuration": 1000,
         "autoLoad": true,
-        "hotSpotDebug": true /* Kapı açılarını ayarlamak için debug modu açık */
+        "hotSpotDebug": true /* Debug mode enabled for pitch/yaw coordinates */
     },
 
     "scenes": {
-        /* 1) MANZARA (VIEW) */
+        /* 1) VIEW */
         "view": {
             "title": "View",
             "type": "equirectangular",
@@ -54,7 +54,7 @@ pannellum.viewer('panorama', {
             ]
         },
 
-        /* 2) SALON (LIVING ROOM) */
+        /* 2) LIVING ROOM */
         "livingRoom": {
             "title": "Living Room",
             "type": "equirectangular",
@@ -84,7 +84,7 @@ pannellum.viewer('panorama', {
             ]
         },
 
-        /* 3) MUTFAK (KITCHEN) */
+        /* 3) KITCHEN */
         "kitchen": {
             "title": "Kitchen",
             "type": "equirectangular",
@@ -100,7 +100,7 @@ pannellum.viewer('panorama', {
             ]
         },
 
-        /* 4) YATAK ODASI (BEDROOM) */
+        /* 4) BEDROOM */
         "bedroom": {
             "title": "Bedroom",
             "type": "equirectangular",
@@ -123,7 +123,7 @@ pannellum.viewer('panorama', {
             ]
         },
 
-        /* 5) GENEL (GENERAL VIEW) */
+        /* 5) GENERAL VIEW */
         "general": {
             "title": "General View",
             "type": "equirectangular",
